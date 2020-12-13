@@ -24,7 +24,7 @@ Those repositories need to be put in this directory format:
 Then, you must ``cd`` into ``colonialwars-main``, and run ``npm start`` (but make sure
 you have all the dependencies installed first).
 ### Running from binaries
-Current not available.
+Currently not available.
 
 ## Running the tests
 Download this repository somehow, ``cd`` into the project root, and run:
