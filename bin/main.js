@@ -15,8 +15,7 @@ process.title = 'colonialwars-main'
 ;(async () => {
   const cwManager = await ColonialwarsManager.create(confFile)
   await cwManager.addAppProcess()
-  process.on('SIGINT', async signal => {
-    console.log(signal)
-    await cwManager.stopAll(signal)
+  process.on('SIGINT', signal => {
+    cwManager.stopAll(signal)
   })
 })()
