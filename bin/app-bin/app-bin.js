@@ -29,5 +29,8 @@ process.title = 'colonialwars-appserver'
     }
   })
 
-  process.on('SIGINT', app.stop.bind(app))
+  process.on('SIGINT', app.shutDown.bind(app))
+  process.on('SIGTERM', app.shutDown.bind(app))
+  process.on('uncaughtException', app.handleUncaughtEx.bind(app))
+  process.on('unhandledRejection', app.handleUncaughtEx.bind(app))
 })()
