@@ -1,12 +1,13 @@
 {
   "name": "colonialwars-main",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Main program entry point for Colonial Wars.",
   "bin": "./bin/main.js",
   "main": "index.js",
   "scripts": {
     "test": "DEBUG=colonialwars-appserver jasmine",
-    "start": "node ./bin/main.js"
+    "start": "node ./bin/main.js",
+    "dev": "DEBUG=colonialwars-* node ./bin/main.js"
   },
   "homepage": "https://github.com/Take-Some-Bytes/colonialwars-main#colonial-wars-main",
   "bugs": {
