@@ -35,4 +35,4 @@ in ``app-bin.js``.
 
 [v0.1.0]: https://github.com/Take-Some-Bytes/colonialwars-main/tree/2ca231664a1ef41334d8bd500f0fddf08654310e
 [v0.1.1]: https://github.com/Take-Some-Bytes/colonialwars-main/tree/025bd6b1accd68e752a5a5fbc74a475451c94f0d
-[v0.1.1]: https://github.com/Take-Some-Bytes/colonialwars-main/tree/main
+[v0.1.2]: https://github.com/Take-Some-Bytes/colonialwars-main/tree/main
