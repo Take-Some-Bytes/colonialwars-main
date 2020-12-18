@@ -1,11 +1,11 @@
 {
   "name": "colonialwars-main",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Main program entry point for Colonial Wars.",
   "bin": "./bin/main.js",
   "main": "index.js",
   "scripts": {
-    "test": "DEBUG=colonialwars-appserver jasmine",
+    "test": "DEBUG=colonialwars-* jasmine",
     "start": "node ./bin/main.js",
     "dev": "DEBUG=colonialwars-* node ./bin/main.js"
   },
@@ -26,7 +26,9 @@
     "standard": "*"
   },
   "dependencies": {
-    "debug": "^4.3.1"
+    "debug": "^4.3.1",
+    "winston": "^3.3.3",
+    "winston-syslog": "^2.4.4"
   },
   "engines": {
     "node": ">=12"
