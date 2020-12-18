@@ -25,6 +25,7 @@ describe('Basic tests for Configurations class', () => {
     } catch (ex) {
       err = ex
     }
+
     expect(err).toBe(null)
     expect(configurations).toBeInstanceOf(Configurations)
   })
