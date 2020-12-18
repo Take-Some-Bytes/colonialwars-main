@@ -2,7 +2,8 @@
 This is ``colonialwars-main``, the component that makes Colonial Wars run.
 This repository includes:
 - A class (``ColonialwarsManager``) to manage the execution of Colonial Wars
-App server and Colonial Wars Game server processes.
+App server and Colonial Wars Game server processes; and,
+- Files as entrypoints for the application. These are found in the ``/bin`` directory.
 
 ## Running the full app
 ### Running from source
