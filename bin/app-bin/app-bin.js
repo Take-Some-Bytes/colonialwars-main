@@ -5,6 +5,10 @@
 const AppServer = require('../../../colonialwars-appserver')
 const utils = require('../bin-utils/utils')
 const args = utils.parseArgs(process.argv)
+const {
+  shutDown,
+  handleUncaughtEx
+} = require('./shutdown')
 let app = null
 let confFile = ''
 
@@ -29,8 +33,8 @@ process.title = 'colonialwars-appserver'
     }
   })
 
-  process.on('SIGINT', app.shutDown.bind(app))
-  process.on('SIGTERM', app.shutDown.bind(app))
-  process.on('uncaughtException', app.handleUncaughtEx.bind(app))
-  process.on('unhandledRejection', app.handleUncaughtEx.bind(app))
+  process.on('SIGINT', shutDown.bind(null, app))
+  process.on('SIGTERM', shutDown.bind(null, app))
+  process.on('uncaughtException', handleUncaughtEx.bind(null, app))
+  process.on('unhandledRejection', handleUncaughtEx.bind(null, app))
 })()
