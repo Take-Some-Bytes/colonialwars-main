@@ -6,7 +6,7 @@
 const path = require('path')
 const Configurations = require('../lib/utils/configurations')
 
-describe('Basic tests for Configurations class', () => {
+describe('The Configurations class, when used without a file input,', () => {
   let configurations = null
   let err = null
 
@@ -51,7 +51,7 @@ describe('Basic tests for Configurations class', () => {
   })
 })
 
-describe('Tests that use a file for Configurations class.', () => {
+describe('The Configurations class, when used with a file input,', () => {
   let configurations = null
   let err = null
 
@@ -92,11 +92,11 @@ describe('Tests that use a file for Configurations class.', () => {
   })
 })
 
-describe('Tests with fallbacks.', () => {
+describe('The Configurations class, when used with fallbacks,', () => {
   let configurations = null
   let err = null
 
-  it('should create without error', async () => {
+  it('should create without error, even if the file path is not valid', async () => {
     try {
       configurations = await Configurations.readFrom(
         '',
