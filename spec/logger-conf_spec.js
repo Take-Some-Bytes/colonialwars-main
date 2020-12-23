@@ -14,7 +14,7 @@ const LoggersConfig = require('../lib/logging/loggers-config')
  */
 const delay = (time) => new Promise(resolve => setTimeout(resolve, time))
 
-describe('Basic tests for LoggersConfig class', () => {
+describe('The LoggersConfig class, when used on its own,', () => {
   let loggersConf = null
   let err = null
 
@@ -107,7 +107,7 @@ const configs = {
   }
 }
 
-describe('Tests to make sure LoggersConfig works with Loggers', () => {
+describe('The LoggersConfig class, when used with the Loggers class,', () => {
   const loggersArr = []
   const syslogServer = new MockSyslogServer()
   let loggersConf = null
