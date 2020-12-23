@@ -28,8 +28,7 @@ you have all the dependencies installed first).
 Currently not available.
 
 ## Compatibility
-Compatible with ``colonialwars-appserver`` v0.1.x and ``colonialwars-gameserver`` v0.1.x (which
-doesn't exist right now).
+Compatible with ``colonialwars-appserver`` v0.1.x.
 
 ## Running the tests
 Download this repository somehow, ``cd`` into the project root, and run:
