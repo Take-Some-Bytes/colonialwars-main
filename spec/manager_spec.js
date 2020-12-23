@@ -15,7 +15,7 @@ const fetch = require('./helpers/fetch')
  */
 const delay = (time) => new Promise(resolve => setTimeout(resolve, time))
 
-describe('Tests for ColonialwarsManager', () => {
+describe('The ColonialwarsManager class,', () => {
   let cwManager = null
   let appProc = null
 
@@ -62,7 +62,7 @@ describe('Tests for ColonialwarsManager', () => {
   })
 })
 
-describe('Tests to make sure apps spawned by ColonialwarsManager work', () => {
+describe('The ColonialwarsManager class, when managng processes,', () => {
   let cwManager = null
 
   beforeAll(async () => {
@@ -74,7 +74,7 @@ describe('Tests to make sure apps spawned by ColonialwarsManager work', () => {
     }
   })
 
-  it('should be able to spawn an app', async () => {
+  it('should be able to spawn an appserver process', async () => {
     let appProc = null
     if (cwManager instanceof ColonialwarsManager) {
       appProc = await cwManager.addAppProcess()
@@ -82,10 +82,11 @@ describe('Tests to make sure apps spawned by ColonialwarsManager work', () => {
 
     expect(appProc.proc).toBeInstanceOf(childProcess.ChildProcess)
     expect(appProc.proc.connected).toBe(true)
+    // Delay to give the process time to actually start up.
     await delay(1000)
   })
 
-  it('should have the app to be able to respond', async () => {
+  it('should have the appserver to be able to respond', async () => {
     console.log()
     const res = await fetch('http://localhost:7000/')
 
