@@ -4,7 +4,7 @@
 
 /**
  * Gracefully shuts down a ColonialwarsManager instance.
- * @param {InstanceType<import('../')>} manager The AppServer instance.
+ * @param {InstanceType<import('../')>} manager The Manager instance.
  * @param {NodeJS.Signals} signal The signal that was received.
  */
 async function shutDown (manager, signal) {
@@ -27,7 +27,7 @@ async function shutDown (manager, signal) {
 
 /**
  * Handles an uncaught exception in the process.
- * @param {InstanceType<import('../../../colonialwars-appserver')>} manager The AppServer instance.
+ * @param {InstanceType<import('../')>} manager The Manager instance.
  * @param {NodeJS.Signals} ex The signal that was received.
  */
 async function handleUncaughtEx (manager, ex) {
