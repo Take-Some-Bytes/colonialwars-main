@@ -3,10 +3,9 @@
  * @fileoverview Testing application utility methods.
  */
 
-const { deepFreeze } = require('../../colonialwars-main/lib/utils/utils')
 const utils = require('../lib/utils/utils')
 
-describe('Basic tests for Colonial Wars util methods', () => {
+describe('The Colonial Wars main utility object,', () => {
   it('should have four properties', () => {
     const utilsLength = Object.keys(utils).length
 
@@ -48,7 +47,7 @@ describe('Basic tests for Colonial Wars util methods', () => {
     }
     const errors = []
     try {
-      deepFreeze(obj)
+      utils.deepFreeze(obj)
       errors.push(null)
     } catch (ex) {
       errors.push(ex)
