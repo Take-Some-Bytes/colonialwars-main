@@ -13,7 +13,7 @@ const MockSyslogServer = require('./mocks/external/mock-syslog-server')
  */
 const delay = (time) => new Promise(resolve => setTimeout(resolve, time))
 
-describe('Basic tests for the Loggers class', () => {
+describe('The Loggers class, when used without a Syslog server,', () => {
   const oldProcessTitle = process.title
   let loggers = null
   let err = null
@@ -78,7 +78,7 @@ describe('Basic tests for the Loggers class', () => {
   })
 })
 
-describe('Testing Logger class with mocked Syslog server', () => {
+describe('The Loggers class, when used with a mock Syslog server,', () => {
   const syslogServer = new MockSyslogServer()
   let loggers = null
   let err = null
@@ -121,7 +121,7 @@ describe('Testing Logger class with mocked Syslog server', () => {
     expect(err).toBe(null)
   })
 
-  it('should be able to send messages to syslog server', async () => {
+  it('should be able to send logs to syslog server', async () => {
     let dataReceived = false
     console.log()
     if (loggers instanceof Loggers) {
