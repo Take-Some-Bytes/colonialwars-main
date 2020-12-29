@@ -1,39 +1,18 @@
-# Colonial Wars Main
-This is ``colonialwars-main``, the component that makes Colonial Wars run.
-This repository includes:
-- A class (``ColonialwarsManager``) to manage the execution of Colonial Wars
-App server and Colonial Wars Game server processes; and,
-- Files as entrypoints for the application. These are found in the ``/bin`` directory.
+# Re-design... Again
+Now, this re-design was about a different topic: simplification. You may or may not have
+noticed that all ``colonialwars-appserver`` does is serve static files, and that ``colonialwars-main`` only
+spawns instances of ``colonialwars-appserver``.
 
-## Running the full app
-### Running from source
-To run the full Colonial Wars application from source, you will need:
-- ``colonialwars-main`` (this repository), to manage the execution of the other
-components;
-- ``colonialwars-appserver``, to run the Colonial Wars application server that
-will serve non-game server routes; and,
-- ``colonialwars-gameserver``, to run the Colonial Wars game server that will
-run the actual game.
+Moving forward, ``colonialwars-appserver`` might have
+had a dynamic route in which clients could get the available game servers from, and ``colonialwars-main``
+might have had to send the ``colonialwars-appserver`` instances information about available game servers.
+But I realized soon enough that the planned design was not sufficient. What if a ``colonialwars-gameserver``
+process was spawned on another machine?
 
-Those repositories need to be put in this directory format:
-```none
-[project-root]/
- |-- colonialwars-appserver/
- |-- colonialwars-gameserver/
- |-- colonialwars-main/
-```
-Then, you must ``cd`` into ``colonialwars-main``, and run ``npm start`` (but make sure
-you have all the dependencies installed first).
-### Running from binaries
-Currently not available.
+Instead of further complicating the design, I decided on this:
+- Removing ``colonialwars-appserver`` and ``colonialwars-main``,
+- Creating a project called ``colonialwars-static`` to house static, client-side files,
+- Renaming ``colonialwars-gameserver`` to ``colonialwars-server``, and
+- Re-thinking the logic for communications from front-end to back-end.
 
-## Compatibility
-Compatible with ``colonialwars-appserver`` v0.1.x.
-
-## Running the tests
-Download this repository somehow, ``cd`` into the project root, and run:
-```sh
-npm install
-npm test
-```
-(just like any other Node.JS project.)
+To summarize, everything has been simplified.
