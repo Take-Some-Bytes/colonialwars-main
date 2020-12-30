@@ -11,7 +11,7 @@ process was spawned on another machine?
 
 Instead of further complicating the design, I decided on this:
 - Removing ``colonialwars-appserver`` and ``colonialwars-main``,
-- Creating a project called ``colonialwars-static`` to house static, client-side files,
+- Creating a project called ``colonialwars-client`` to house static, client-side files,
 - Renaming ``colonialwars-gameserver`` to ``colonialwars-server``, and
 - Re-thinking the logic for communications from front-end to back-end.
 
